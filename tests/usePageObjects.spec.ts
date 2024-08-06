@@ -32,5 +32,11 @@ test.only('parametrized methods', async ({ page }) => {
     await  pm.onDatepickerPage().selectCommonDatePickerDateFromToday(5)
     await  pm.onDatepickerPage().selectDateoickerWithRange(2,5)
 })
+test.only('test with CI', async ({ page }) => {
+    const pm = new PageManager(page)
 
+    await pm.navigateTo().formLayoutsPage()
+    await pm.navigateTo().datepickerPage()
+
+})
 // npx playwright test usePageObjects --project=chromium --headed
